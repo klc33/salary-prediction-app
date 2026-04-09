@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from ollama import chat  # <- use chat function, not Ollama class
+import os
+from datetime import datetime
 
 def generate_analysis(predictions: pd.DataFrame):
     """
@@ -10,6 +12,10 @@ def generate_analysis(predictions: pd.DataFrame):
       - predicted_salary
       - other features if needed
     """
+    
+    os.makedirs("charts", exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
 
     # Step 1: Simple chart
     plt.figure(figsize=(8, 5))
@@ -17,7 +23,7 @@ def generate_analysis(predictions: pd.DataFrame):
     plt.xticks(rotation=45)
     plt.title('Predicted Salary by Job Title')
     plt.tight_layout()
-    chart_path = "salary_chart.png"
+    chart_path = f"charts/salary_chart_{timestamp}.png"
     plt.savefig(chart_path)
     plt.close()
 
