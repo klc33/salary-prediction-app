@@ -30,16 +30,23 @@ You are a data analyst. Here is the predicted salary dataset:
 
 {text_input}
 
-Please generate a written analysis of the salary landscape. 
+Please generate a 70 words written analysis of the salary landscape. 
 Highlight which job titles have higher salaries, trends with remote ratio or company size, 
 and any other interesting insights. Refer to the chart saved as '{chart_path}'.
 """
 
     # Step 4: Call LLM (Ollama)
-    response = chat(model="llama3", messages=[{"role": "user", "content": prompt}])
+    response = chat(
+        model="llama3",
+        messages=[{"role": "user", "content": prompt}],
+        options={
+            "num_predict": 100  # limit output tokens (try 100–200)
+        }
+    )
 
     # Step 5: Return analysis and chart path
     return {
-        "narrative": response['content'],
+        "narrative": response.message.content,
         "chart_path": chart_path
     }
+
