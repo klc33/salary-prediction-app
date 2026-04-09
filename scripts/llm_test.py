@@ -15,6 +15,16 @@ jobs = [
      "employee_residence": "US", "company_size": "L", "remote_ratio": 20},
     {"job_title": "Data Analyst", "experience_level": "EN", "employment_type": "FT",
      "employee_residence": "US", "company_size": "S", "remote_ratio": 0},
+    {"job_title": "Big Data Engineer", "experience_level": "SE", "employment_type": "FT",
+     "employee_residence": "GB", "company_size": "M", "remote_ratio": 50},
+    {"job_title": "Product Data Analyst", "experience_level": "MI", "employment_type": "FT",
+     "employee_residence": "HN", "company_size": "S", "remote_ratio": 0},
+    {"job_title": "Lead Data Scientist", "experience_level": "SE", "employment_type": "FT",
+     "employee_residence": "US", "company_size": "S", "remote_ratio": 100},
+    {"job_title": "Business Data Analyst", "experience_level": "MI", "employment_type": "FT",
+     "employee_residence": "US", "company_size": "L", "remote_ratio":100},
+    {"job_title": "Lead Data Engineer", "experience_level": "SE", "employment_type": "FT",
+     "employee_residence": "NZ", "company_size": "S", "remote_ratio": 50},
 ]
 
 # Call API for each job and collect results

@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pickle
 
@@ -39,3 +39,4 @@ print(f"Random Forest MAE: {mae_rf:.2f}, R2: {r2_rf:.2f}")
 
 with open("models/model.pkl", "wb") as f:
     pickle.dump(rf_model, f)  # or rf_model if you use Random Forest
+    
